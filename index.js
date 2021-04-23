@@ -29,8 +29,8 @@ const quizQuestions = [
     answers: ['A','a']
   },
   {
-    question: "About which city do Hawkeye and Black Widow often reminisce",
-    options: ['A: Budapest','B: Sokovia','C: Istanbul','D: Prague'],
+    question: "What was the last movie in Phase 4 of MCU?",
+    options: ['A: Spider-Man: Far From Home','B: Avengers: Endgame','C: Captain Marvel','D: Avengers: Infinity War'],
     answers: ['A','a']
   }
 ]
@@ -51,7 +51,7 @@ const quizApp = () =>{
     let validOption = isValidOption(answer);
     if(validOption !== undefined){
       console.log(validOption);
-      answer=readLineSync.question("Your Option is: \n");
+      answer=readLineSync.question("Your Option is: ");
     }    
     if(question.answers.includes(answer)){
       console.log("Corrrecccct!\n");
