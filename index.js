@@ -10,17 +10,17 @@ console.log(`Yo ${name}!, Lets gooooo\n`);
 const quizQuestions = [
   {
     question: "What year was the first Iron Man movie released, kicking off the Marvel Cinematic Universe?",
-    options: ['A: 2005','B: 2008','C: 2010','D: 2012'],
+    options: ['2005','2008','2010','2012'],
     answers: ['B','b']
   },
   {
     question: "What is the name of Thor’s hammer?",
-    options: ['A: Vanir','B: Mjolnir','C: Aesir','D: Norn '],
+    options: ['Vanir','Mjolnir','Aesir','Norn '],
     answers: ['B','b']
   },
   {
     question: "What is Captain America’s shield made of?",
-    options: ['A: Adamantium','B: Vibranium','C: Promethium', 'D: Carbonadiumr'],
+    options: ['Adamantium','Vibranium','Promethium', 'Carbonadiumr'],
     answers: ['B','b']
   },
   {
@@ -30,7 +30,7 @@ const quizQuestions = [
   },
   {
     question: "What was the last movie in Phase 4 of MCU?",
-    options: ['A: Spider-Man: Far From Home','B: Avengers: Endgame','C: Captain Marvel','D: Avengers: Infinity War'],
+    options: ['Spider-Man: Far From Home','Avengers: Endgame','Captain Marvel','Avengers: Infinity War'],
     answers: ['A','a']
   }
 ]
@@ -44,9 +44,15 @@ const isValidOption = (option) =>{
 const quizApp = () =>{
   quizQuestions.forEach((question,index)=>{
     console.log(index+1 +" : " +question.question);
-    for(let option of question.options){
-     console.log(option);
+    let asciiCode = 65;
+    for(let option of question.options){      
+     console.log(String.fromCharCode(asciiCode)+" : "+option);
+     asciiCode++
     }
+    // question.options.forEach((index, option)=>{
+    //  // console.log(index)
+    //   console.log(`${String.fromCharCode(index+65)} : ${option}` );
+    // })
     let answer = readLineSync.question();
     let validOption = isValidOption(answer);
     if(validOption !== undefined){
