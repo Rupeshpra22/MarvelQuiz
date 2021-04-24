@@ -11,27 +11,27 @@ const quizQuestions = [
   {
     question: "What year was the first Iron Man movie released, kicking off the Marvel Cinematic Universe?",
     options: ['2005','2008','2010','2012'],
-    answers: ['B','b']
+    answers: 'B'
   },
   {
     question: "What is the name of Thor’s hammer?",
     options: ['Vanir','Mjolnir','Aesir','Norn '],
-    answers: ['B','b']
+    answers: 'B'
   },
   {
     question: "What is Captain America’s shield made of?",
     options: ['Adamantium','Vibranium','Promethium', 'Carbonadiumr'],
-    answers: ['B','b']
+    answers: 'B'
   },
   {
     question: "What is the real name of the Black Panther?",
     options: ['A: T’Challa','B: M’Baku','C: N’Jadaka','D: N’Jobu'],
-    answers: ['A','a']
+    answers: 'A'
   },
   {
     question: "What was the last movie in Phase 4 of MCU?",
     options: ['Spider-Man: Far From Home','Avengers: Endgame','Captain Marvel','Avengers: Infinity War'],
-    answers: ['A','a']
+    answers: 'A'
   }
 ]
 
@@ -49,17 +49,13 @@ const quizApp = () =>{
      console.log(String.fromCharCode(asciiCode)+" : "+option);
      asciiCode++
     }
-    // question.options.forEach((index, option)=>{
-    //  // console.log(index)
-    //   console.log(`${String.fromCharCode(index+65)} : ${option}` );
-    // })
     let answer = readLineSync.question();
     let validOption = isValidOption(answer);
     if(validOption !== undefined){
       console.log(validOption);
       answer=readLineSync.question("Your Option is: ");
     }    
-    if(question.answers.includes(answer)){
+    if(question.answers === answer || question.answers === answer.toUpperCase()){
       console.log("Corrrecccct!\n");
       correctAnswer+=1;
     }else{
